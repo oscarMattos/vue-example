@@ -1,0 +1,107 @@
+body {
+  *:focus {
+    outline: none;
+  }
+
+  h2 {
+    text-transform: uppercase;
+    letter-spacing: 0.5rem;
+    line-height: normal;
+    text-align: center;
+    font-weight: 200;
+  }
+
+  .search {
+    input {
+      font-size: 0.8rem;
+      font-weight: 300;
+      height: 40px;
+      padding: 10px 20px;
+      border-radius: 20px;
+    }
+
+    button {
+      letter-spacing: 0.1rem;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      font-weight: 500;
+      height: 40px;
+      padding: 10px 20px;
+      border-radius: 20px;
+
+      &:hover {
+        color: white;
+      }
+    }
+  }
+
+  .card {
+    &-top {
+      height: 400px;
+
+      .city-country {
+        text-transform: uppercase;
+        font-size: 0.7rem;
+
+        span:first-child {
+          font-weight: 500;
+        }
+
+        span:last-child {
+          font-weight: 300;
+        }
+      }
+
+      .temperature {
+        h3 {
+          line-height: 3.5rem;
+          font-size: 4.5rem;
+          font-weight: 100;
+        }
+      }
+
+      .extra-data {
+        font-size: 0.7rem;
+        font-weight: 300;
+      }
+    }
+    
+    &-bottom {
+      p {
+        margin: 0px;
+        font-size: 0.8rem;
+      }
+
+      .collapsible-content {
+        &-closed {
+          max-height: 0;
+          transition: max-height 1s ease;
+          overflow: hidden;
+        }
+  
+        &-opened {
+          max-height: 500px;
+          transition: max-height 1s ease;
+        }
+      }
+    }
+  }
+
+  .dark-skies {
+    background: #4b79a1;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #283e51, #4b79a1);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #283e51, #4b79a1);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  }
+
+  .dark-overlay-top-gradient {
+    background: #4b79a1;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #000000, rgba(#000000,0));
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #000000, rgba(#000000,0));
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  }
+}
