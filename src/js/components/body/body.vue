@@ -3,11 +3,8 @@
     <!-- Slot Para Nombre del Componente -->
     <slot name="component-name"></slot>
 
-    <finder-component @emitMessage="finderListenerEvent"></finder-component>
-    <card-component
-      :weather-data-value-from-body="weatherData"
-      :city-photo-url-from-body="cityPhotoUrl"
-    ></card-component>
+    <finder-component @updateWeather="updateBodyWeather"></finder-component>
+    <card-component :weatherprop="weather" :imageprop="cityPhotoUrl"></card-component>
   </div>
 </template>
 <script src="./body.js"></script>

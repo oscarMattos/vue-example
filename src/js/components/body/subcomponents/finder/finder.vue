@@ -1,10 +1,10 @@
 <template>
   <div>
-    <h2>Finder</h2>
+    <!-- <h2>Finder</h2> -->
     <div class="search d-flex justify-content-center mt-2">
       <div class="d-flex w-25">
-        <input type="text" v-model="city" class="border mr-2 w-50" v-on:keyup.enter="emitMessage" />
-        <button class="btn btn-outline-primary ml-2 w-50" @click="emitMessage">Consultar</button>
+        <input type="text" v-model="city" class="border mr-2 w-50" v-on:keyup.enter="getWeather" />
+        <button class="btn btn-outline-primary ml-2 w-50" @click="getWeather">Consultar</button>
       </div>
     </div>
   </div>

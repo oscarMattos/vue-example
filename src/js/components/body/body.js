@@ -14,7 +14,7 @@ export default {
       mario: Mario,
       /*city: "",*/
       cityPhotoUrl: "",
-      weatherData: {},
+      weather: {},
     };
   },
   filters: {
@@ -74,13 +74,9 @@ export default {
     },*/
   },
   methods: {
-    finderListenerEvent(event) {
-      console.log("Escuchado " + event);
-      this.weatherData = event.weatherData;
-      console.log("weatherData " + this.weatherData);
+    updateBodyWeather(event) {
+      this.weather = event.weather;
       this.cityPhotoUrl = event.cityPhotoUrl;
-      console.log("Correct Value cityPhotoUrl " + event.cityPhotoUrl);
-      console.log("cityPhotoUrl " + this.cityPhotoUrl);
     },
 
     /*
@@ -146,9 +142,6 @@ export default {
   },
   mounted() {},
   computed: {
-    changePhoto(urlPhoto) {
-      this.cityPhotoUrl = urlPhoto;
-    },
     /*
     weather() {
       let data;

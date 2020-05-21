@@ -4,15 +4,8 @@ export default {
     return { city: "", cityPhotoUrl: "", weatherData: {} };
   },
   methods: {
-    emitMessage() {
-      console.log("Emit Start");
+    getWeather() {
       this.submitGetWeather();
-      console.log("Valor nuevo foto: " + this.cityPhotoUrl);
-      let objetoRetorno = {
-        weatherData: this.weatherData,
-        cityPhotoUrl: this.cityPhotoUrl,
-      };
-      this.$emit("emitMessage", objetoRetorno);
     },
     submitGetWeather() {
       let url;
@@ -24,7 +17,7 @@ export default {
         .then((JSONdata) => {
           if (JSONdata.cod != "404") {
             this.weatherData = JSONdata;
-            this.submitGetPhoto();
+
             document.querySelector(".collapsible-content-closed") != null
               ? this.toggleCollapse(".card-bottom > div")
               : "";
@@ -35,6 +28,9 @@ export default {
             this.cityPhotoUrl = "";
             this.weatherData = {};
           }
+        })
+        .then(() => {
+          this.submitGetPhoto();
         })
         .catch((error) => {
           document.querySelector(".collapsible-content-opened") != null
@@ -57,6 +53,13 @@ export default {
             randomNum = Math.floor(Math.random() * 10);
           }
           this.cityPhotoUrl = JSONdata.results[randomNum].urls["regular"] || "";
+        })
+        .then(() => {
+          let objetoRetorno = {
+            weather: this.weather,
+            cityPhotoUrl: this.cityPhotoUrl,
+          };
+          this.$emit("updateWeather", objetoRetorno);
         })
         .catch((error) => {
           console.error(`Error: ${error}`);

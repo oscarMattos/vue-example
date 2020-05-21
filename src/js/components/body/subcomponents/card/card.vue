@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>Card</h2>
+    <!-- <h2>Card</h2> -->
     <div class="d-flex justify-content-center pt-3 pb-2">
       <div class="card d-flex flex-column w-25 bg-white border shadow-sm">
         <!-- Card Top Section -->
