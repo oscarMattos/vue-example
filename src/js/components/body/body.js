@@ -1,18 +1,24 @@
 import Mario from "img/mario-bros.png";
 import WeatherConditions from "json/weather-conditions.json";
+import FinderComponent from "components/body/subcomponents/finder/finder.vue";
+import CardComponent from "components/body/subcomponents/card/card.vue";
 
 export default {
   name: "body-component",
+  components: {
+    FinderComponent,
+    CardComponent,
+  },
   data() {
     return {
       mario: Mario,
-      city: "",
+      /*city: "",*/
       cityPhotoUrl: "",
       weatherData: {},
     };
   },
   filters: {
-    convertTimestamptoTime(value) {
+    /*convertTimestamptoTime(value) {
       let result, unixTimestamp, dateObj, utcString, time;
 
       if (value === undefined) {
@@ -65,9 +71,19 @@ export default {
         result = value + " %";
       }
       return result;
-    },
+    },*/
   },
   methods: {
+    finderListenerEvent(event) {
+      console.log("Escuchado " + event);
+      this.weatherData = event.weatherData;
+      console.log("weatherData " + this.weatherData);
+      this.cityPhotoUrl = event.cityPhotoUrl;
+      console.log("Correct Value cityPhotoUrl " + event.cityPhotoUrl);
+      console.log("cityPhotoUrl " + this.cityPhotoUrl);
+    },
+
+    /*
     submitGetWeather() {
       let url;
       url = `${this.$root.openWeatherApi.baseUrl}${this.city}&appid=${this.$root.openWeatherApi.apiKey}&lang=${this.$root.openWeatherApi.lang}&units=${this.$root.openWeatherApi.metric}`;
@@ -121,15 +137,19 @@ export default {
       selector = document.querySelector(cssSelector);
       if (selector.classList.contains("collapsible-content-closed")) {
         selector.classList.remove("collapsible-content-closed");
-        selector.classList.add("collapsible-content-opened","p-3");
+        selector.classList.add("collapsible-content-opened", "p-3");
       } else {
         selector.classList.add("collapsible-content-closed");
-        selector.classList.remove("collapsible-content-opened","p-3");
+        selector.classList.remove("collapsible-content-opened", "p-3");
       }
-    },
+    },*/
   },
   mounted() {},
   computed: {
+    changePhoto(urlPhoto) {
+      this.cityPhotoUrl = urlPhoto;
+    },
+    /*
     weather() {
       let data;
       data = {};
@@ -206,10 +226,10 @@ export default {
 
       return data;
     },
-    hasWeatherData(){
-        let data
-        data = Object.keys(this.weatherData)
-        return data.length 
-    }
+    hasWeatherData() {
+      let data;
+      data = Object.keys(this.weatherData);
+      return data.length;
+    },*/
   },
 };
