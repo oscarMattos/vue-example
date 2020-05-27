@@ -9,16 +9,25 @@
           :class="[!cityPhotoUrl ? 'bg-gradient-dark' : '']"
           :style="[
             cityPhotoUrl
-              ? {   
-                  backgroundImage: 'linear-gradient(to bottom, rgba(0,0,0,.6) 0%, rgba(0,0,0,0) 30%), url(' + cityPhotoUrl + ')',
+              ? {
+                  backgroundImage:
+                    'linear-gradient(to bottom, rgba(0,0,0,.6) 0%, rgba(0,0,0,0) 30%), url(' +
+                    cityPhotoUrl +
+                    ')',
                   backgroundSize: 'cover',
                 }
-              : {}, 
+              : {},
           ]"
         >
           <div class="city-country d-flex justify-content-center pt-3 pb-2">
-            <span class="mr-1 text-light">{{ weather.city }}</span>
-            <span class="ml-1 text-light">{{ weather.country }}</span>
+            <div>
+              <button class="ml-1 trans-background" @click="addItemToFavList">{{favButtonIcon}}</button>
+              <span
+                class="mr-1 text-light"
+                style="justify-content: space-arround !important;"
+              >{{ weather.city }}</span>
+              <span class="ml-1 text-light">{{ weather.country }}</span>
+            </div>
           </div>
 
           <div class="d-flex h-100">

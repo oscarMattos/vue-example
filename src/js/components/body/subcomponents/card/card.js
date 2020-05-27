@@ -59,7 +59,19 @@ export default {
       return result;
     },
   },
-  methods: {},
+  methods: {
+    addItemToFavList() {
+      console.log(...(this.$root.favList + this.weather.city));
+      if (this.weather.city != "") {
+        if (!this.$root.favList.includes(this.weather.city))
+          this.$root.favList = [...this.$root.favList, this.weather.city];
+        else
+          this.$root.favList = this.$root.favList.filter(
+            (item) => item !== this.weather.city
+          );
+      }
+    },
+  },
   mounted() {},
   computed: {
     cityPhotoUrl() {
@@ -67,6 +79,9 @@ export default {
     },
     weather() {
       return this.weatherprop;
+    },
+    favButtonIcon() {
+      return this.$root.favList.includes(this.weather.city) ? "❤" : "🤍";
     },
   },
   props: ["weatherprop", "imageprop"],

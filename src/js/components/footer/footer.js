@@ -1,17 +1,14 @@
+import FavList from "./subcomponents/fav-list.vue";
+
 export default {
-    name: 'footer-component',
-    data(){
-        return{
-
-        }
-    },
-    methods:{
-
-    },
-    mounted(){
-
-    },
-    computed:{
-        
-    }
-}
+  name: "footer-component",
+  components: {
+    FavList,
+  },
+  data() {
+    return {};
+  },
+  methods: {},
+  mounted() {},
+  computed: {},
+};

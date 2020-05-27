@@ -12,7 +12,6 @@ export default {
   data() {
     return {
       mario: Mario,
-      /*city: "",*/
       cityPhotoUrl: "",
       weather: {},
     };

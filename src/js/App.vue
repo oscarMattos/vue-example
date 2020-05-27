@@ -23,7 +23,7 @@
 
     <footer-component>
       <template #component-name>
-        <h2 class="text-white m-0">Footer Component</h2>
+        <h2 class="text-white m-0">Favorites</h2>
       </template>
     </footer-component>
   </div>
