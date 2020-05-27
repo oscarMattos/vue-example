@@ -23,7 +23,7 @@
             <div>
               <button
                 v-if="weather.city !== undefined"
-                class="ml-1 trans-background"
+                class="ml-1 bg-transparent border-0"
                 @click="addItemToFavList"
               >{{favButtonIcon}}</button>
               <span

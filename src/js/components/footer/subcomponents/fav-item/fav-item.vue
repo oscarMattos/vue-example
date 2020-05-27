@@ -4,8 +4,8 @@
     @mouseleave="hover = false"
     style="display: flex; justify-content: center"
   >
-    <h3 class="favItem trans-background">{{city}}</h3>
-    <button v-if="hover" @click="deleteItem" class="trans-background">🗑</button>
+    <h3 class="bg-transparent text-white font-weight-light">{{city}}</h3>
+    <button v-if="hover" @click="deleteItem" class="bg-transparent border-0">🗑</button>
   </div>
 </template>
 

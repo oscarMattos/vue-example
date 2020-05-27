@@ -1,5 +1,5 @@
 <template>
-  <div class="favList">
+  <div class="mt-0 d-flex flex-column justify-content-center align-items-center">
     <template v-for="(item,i) in this.favList">
       <fav-item :key="i" :city="item"></fav-item>
     </template>
