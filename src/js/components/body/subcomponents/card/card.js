@@ -62,7 +62,7 @@ export default {
   methods: {
     addItemToFavList() {
       console.log(...(this.$root.favList + this.weather.city));
-      if (this.weather.city != "") {
+      if (this.weather.city !== undefined) {
         if (!this.$root.favList.includes(this.weather.city))
           this.$root.favList = [...this.$root.favList, this.weather.city];
         else

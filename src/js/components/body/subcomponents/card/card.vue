@@ -21,7 +21,11 @@
         >
           <div class="city-country d-flex justify-content-center pt-3 pb-2">
             <div>
-              <button class="ml-1 trans-background" @click="addItemToFavList">{{favButtonIcon}}</button>
+              <button
+                v-if="weather.city !== undefined"
+                class="ml-1 trans-background"
+                @click="addItemToFavList"
+              >{{favButtonIcon}}</button>
               <span
                 class="mr-1 text-light"
                 style="justify-content: space-arround !important;"

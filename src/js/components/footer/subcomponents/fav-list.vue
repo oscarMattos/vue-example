@@ -1,6 +1,6 @@
 <template>
-  <div style="margin-top: 10px">
-    <h3 class="favItem" :key="i" v-for="(item,i) in this.favList">{{item}}</h3>
+  <div class="favList">
+    <button class="favItem trans-background" :key="i" v-for="(item,i) in this.favList">{{item}}</button>
   </div>
 </template>
 
